@@ -1,18 +1,6 @@
-import json
-from rand import random #導入亂數函式
+from randnum import rand
 
-rndlist = []
+gen = rand(max=1000, min=100)
 
-for result in random(1000): #執行三十五次
-  rndlist.append(result) #列印每次結果
-
-with open("test.txt", "w") as jfile:
-  for data in rndlist:
-    jfile.write(str(data) + "\n")
-print(rndlist)
-
-rndlist = sorted(rndlist)
-with open("json.txt", "w") as jfile:
-  for data in rndlist:
-    jfile.write(str(data) + "\n")
-print(rndlist)
+for result in gen.rand(900):
+  print(result)
